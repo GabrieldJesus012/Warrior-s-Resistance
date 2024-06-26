@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2apvpirmv82h"]
+
+[ext_resource type="PackedScene" uid="uid://7khdr78053i8" path="res://misc/meet.tscn" id="1_weqkv"]
+
+[node name="meet" instance=ExtResource("1_weqkv")]
+modulate = Color(2, 2, 0, 1)
+scale = Vector2(1.5, 1.5)
+regenerated_amount = 100
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+visible = false

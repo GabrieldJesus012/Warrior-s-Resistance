@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://clh4q7w6vrs8e"]
+
+[ext_resource type="Script" path="res://ui/game_ui.gd" id="1_ddqid"]
+[ext_resource type="Texture2D" uid="uid://c83grqx2jjcjp" path="res://Addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_x87wi"]
+[ext_resource type="Texture2D" uid="uid://dqnmv3ppl54he" path="res://Addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_vgv5c"]
+[ext_resource type="Texture2D" uid="uid://dsxtf83etbqgu" path="res://Addons/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="4_64efj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liwwp"]
+texture = ExtResource("1_x87wi")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_mq3na"]
+font_names = PackedStringArray("ITC Avant Garde")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7rag"]
+font = SubResource("SystemFont_mq3na")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsbwq"]
+atlas = ExtResource("3_vgv5c")
+region = Rect2(40, 48, 56, 56)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5itb"]
+texture = ExtResource("4_64efj")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="SystemFont" id="SystemFont_mvsqo"]
+font_names = PackedStringArray("ITC Avant Garde")
+font_weight = 999
+subpixel_positioning = 0
+
+[node name="GameUi" type="CanvasLayer"]
+script = ExtResource("1_ddqid")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -175.0
+offset_top = 26.0
+offset_right = -39.0
+offset_bottom = 109.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_liwwp")
+
+[node name="MeetLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -38.0
+offset_right = 51.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "50 "
+label_settings = SubResource("LabelSettings_d7rag")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -1.0
+offset_right = 127.0
+offset_bottom = 93.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_lsbwq")
+
+[node name="Panel3" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.0
+offset_top = 26.0
+offset_right = 62.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_a5itb")
+
+[node name="TimeLabel" type="Label" parent="Panel3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -28.5
+offset_right = 46.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_mvsqo")
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
