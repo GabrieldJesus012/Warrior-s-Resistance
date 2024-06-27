@@ -33,7 +33,6 @@ var touch_right_pressed: bool = false
 var touch_up_pressed: bool = false
 var touch_down_pressed: bool = false
 
-
 signal  meat_collected(value:int)
 
 #Funcoes:
@@ -49,7 +48,7 @@ func _process(delta:float) -> void:
 	
 	#Processar ataque
 	uptade_attack_cooldown(delta)
-	if Input.is_action_just_pressed("attack") and not (touch_left_pressed or touch_right_pressed or touch_up_pressed or touch_down_pressed): #A gente acabou de atacar?
+	if Input.is_action_just_pressed("attack"): #A gente acabou de atacar?
 		attack()
 		
 	#processar animação e rotação de sprite
@@ -235,7 +234,4 @@ func update_ritual(delta:float):
 	var ritual = ritual_scene.instantiate()
 	ritual.damage_amount = ritual_damage
 	add_child(ritual)
-
-
-
 
