@@ -52,7 +52,7 @@ func _process(delta:float) -> void:
 	play_run_iddle_animation()
 	if not is_attacking:
 		rotate_sprite()
-		
+	
 	#Processar dano
 	uptade_hitbox_detection(delta)
 	
@@ -230,5 +230,19 @@ func _on_joystick_joystick_input(strength, direction, delta):
 	newDir = direction
 	input_vector.x = newDir.x
 	input_vector.y = newDir.y
-	play_run_iddle_animation()
+	
+	was_running = is_running
+	is_running = not input_vector.is_zero_approx()
+	#animacao para correr
+	play_run_idle_animation_joystick()
+	#girar sprite
 	rotate_sprite()
+
+func play_run_idle_animation_joystick() -> void:
+	if not is_attacking:
+		if was_running != is_running:
+			if is_running:
+				animation_player.play("run")
+			else:
+				animation_player.play("Idle")
+
