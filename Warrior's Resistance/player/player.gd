@@ -28,10 +28,7 @@ var attack_cooldown: float =0.0
 var hitbox_cooldown: float= 0.0
 var input_vector: Vector2 = Vector2(0,0)
 var ritual_cooldown: float= 0.0
-var touch_left_pressed: bool = false
-var touch_right_pressed: bool = false
-var touch_up_pressed: bool = false
-var touch_down_pressed: bool = false
+var newDir: Vector2 = Vector2.ZERO
 
 signal  meat_collected(value:int)
 
@@ -92,12 +89,6 @@ func ready_input() -> void:
 		input_vector.x = 0.0
 	if abs(input_vector.y)<0.15:
 		input_vector.y = 0.0
-	
-	 # Atualizar o estado dos botões de movimento
-	touch_left_pressed = Input.is_action_pressed("move_left")
-	touch_right_pressed = Input.is_action_pressed("move_right")
-	touch_up_pressed = Input.is_action_pressed("move_up")
-	touch_down_pressed = Input.is_action_pressed("move_down")
 	
 	#atualizar o is running
 	was_running = is_running
@@ -234,4 +225,11 @@ func update_ritual(delta:float):
 	var ritual = ritual_scene.instantiate()
 	ritual.damage_amount = ritual_damage
 	add_child(ritual)
+
+func _on_joystick_joystick_input(strength, direction, delta):
+	input_vector = direction
+	input_vector.x = newDir.x
+	input_vector.y = newDir.y
+
+
 
