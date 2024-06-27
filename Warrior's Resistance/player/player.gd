@@ -235,6 +235,7 @@ func update_ritual(delta:float):
 	var ritual = ritual_scene.instantiate()
 	ritual.damage_amount = ritual_damage
 	add_child(ritual)
-	
+
+
 
 
