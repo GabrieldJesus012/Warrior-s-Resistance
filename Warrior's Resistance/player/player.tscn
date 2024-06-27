@@ -334,6 +334,7 @@ show_percentage = false
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TouchScreenLeft" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.611765)
 position = Vector2(52, 476)
 scale = Vector2(1.25, 1.25)
 texture_normal = ExtResource("5_prtts")
@@ -342,6 +343,7 @@ action = "move_left"
 visibility_mode = 1
 
 [node name="TouchScreenRight" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.611765)
 position = Vector2(248, 476)
 scale = Vector2(1.25, 1.25)
 texture_normal = ExtResource("5_prtts")
@@ -350,6 +352,7 @@ action = "move_right"
 visibility_mode = 1
 
 [node name="TouchScreenDown" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.611765)
 position = Vector2(154, 559)
 scale = Vector2(1.25, 1.25)
 texture_normal = ExtResource("5_prtts")
@@ -358,6 +361,7 @@ action = "move_down"
 visibility_mode = 1
 
 [node name="TouchScreenUp" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.611765)
 position = Vector2(154, 394)
 scale = Vector2(1.25, 1.25)
 texture_normal = ExtResource("5_prtts")
@@ -366,6 +370,7 @@ action = "move_up"
 visibility_mode = 1
 
 [node name="TouchScreenAttack" type="TouchScreenButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.611765)
 position = Vector2(972, 465)
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("6_qs4qu")
