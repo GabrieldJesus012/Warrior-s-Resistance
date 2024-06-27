@@ -227,9 +227,8 @@ func update_ritual(delta:float):
 	add_child(ritual)
 
 func _on_joystick_joystick_input(strength, direction, delta):
-	input_vector = direction
+	newDir = direction
 	input_vector.x = newDir.x
 	input_vector.y = newDir.y
-
-
-
+	play_run_iddle_animation()
+	rotate_sprite()
