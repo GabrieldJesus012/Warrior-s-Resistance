@@ -1,19 +1,45 @@
-[gd_scene load_steps=11 format=3 uid="uid://clh4q7w6vrs8e"]
+[gd_scene load_steps=17 format=3 uid="uid://clh4q7w6vrs8e"]
 
 [ext_resource type="Script" path="res://ui/game_ui.gd" id="1_ddqid"]
-[ext_resource type="Texture2D" uid="uid://c83grqx2jjcjp" path="res://Addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_x87wi"]
+[ext_resource type="Texture2D" uid="uid://bidynuky0v564" path="res://Addons/Tiny Swords/UI/Banners/Banner_Connection_Right.png" id="2_kbvuv"]
+[ext_resource type="Texture2D" uid="uid://dwnqdabrm5acp" path="res://Addons/Tiny Swords/UI/Ribbons/Ribbon_Blue_Connection_Right_Pressed.png" id="3_i82so"]
 [ext_resource type="Texture2D" uid="uid://dqnmv3ppl54he" path="res://Addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_vgv5c"]
 [ext_resource type="Texture2D" uid="uid://dsxtf83etbqgu" path="res://Addons/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="4_64efj"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liwwp"]
-texture = ExtResource("1_x87wi")
-texture_margin_left = 32.0
-texture_margin_top = 16.0
-texture_margin_right = 32.0
-texture_margin_bottom = 48.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4c6qn"]
+texture = ExtResource("2_kbvuv")
+texture_margin_left = 40.0
+texture_margin_top = 24.0
+texture_margin_right = 56.0
+texture_margin_bottom = 56.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
-region_rect = Rect2(32, 48, 128, 128)
+region_rect = Rect2(48, 48, 144, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_scn1l"]
+
+[sub_resource type="SystemFont" id="SystemFont_rclyv"]
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_bger8"]
+font = SubResource("SystemFont_rclyv")
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p71c3"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liwwp"]
+texture = ExtResource("3_i82so")
+texture_margin_left = 24.0
+texture_margin_top = 32.0
+texture_margin_right = 30.0
+texture_margin_bottom = 40.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(0, 0, 64, 56)
 
 [sub_resource type="SystemFont" id="SystemFont_mq3na"]
 font_names = PackedStringArray("ITC Avant Garde")
@@ -42,14 +68,53 @@ subpixel_positioning = 0
 [node name="GameUi" type="CanvasLayer"]
 script = ExtResource("1_ddqid")
 
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -238.0
+offset_bottom = 82.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4c6qn")
+
+[node name="KillsLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -40.0
+offset_right = -69.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_scn1l")
+theme_override_font_sizes/font_size = 32
+text = "0"
+label_settings = SubResource("LabelSettings_bger8")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 1.0
+offset_right = 151.0
+offset_bottom = 46.0
+text = "KILLS
+"
+label_settings = SubResource("LabelSettings_p71c3")
+
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -175.0
-offset_top = 26.0
-offset_right = -39.0
-offset_bottom = 109.0
+offset_left = -236.0
+offset_top = 42.0
+offset_right = -100.0
+offset_bottom = 113.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_liwwp")
@@ -63,9 +128,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 6.0
-offset_top = -38.0
+offset_top = -24.5
 offset_right = 51.0
-offset_bottom = 2.0
+offset_bottom = 20.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "50 "
@@ -76,9 +141,9 @@ vertical_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_left = 21.0
-offset_top = -1.0
+offset_top = 10.0
 offset_right = 127.0
-offset_bottom = 93.0
+offset_bottom = 104.0
 scale = Vector2(0.5, 0.5)
 texture = SubResource("AtlasTexture_lsbwq")
 
@@ -86,10 +151,10 @@ texture = SubResource("AtlasTexture_lsbwq")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -63.0
-offset_top = 26.0
-offset_right = 62.0
-offset_bottom = 99.0
+offset_left = -64.0
+offset_top = -3.0
+offset_right = 61.0
+offset_bottom = 70.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_a5itb")
 

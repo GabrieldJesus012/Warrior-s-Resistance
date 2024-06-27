@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqup6jvlp5e13"]
+[gd_scene load_steps=27 format=3 uid="uid://bqup6jvlp5e13"]
 
 [ext_resource type="Texture2D" uid="uid://c3wtwnsrxvhdd" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_k5qev"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_kygoh"]
 [ext_resource type="PackedScene" uid="uid://bnlgoy2eut280" path="res://misc/big_skull.tscn" id="2_bnnoh"]
 [ext_resource type="PackedScene" uid="uid://dduib2707y476" path="res://misc/ritual.tscn" id="2_jdwup"]
+[ext_resource type="Texture2D" uid="uid://bjvjdi500afky" path="res://Addons/Tiny Swords/UI/Buttons/Button_Blue.png" id="5_prtts"]
+[ext_resource type="Texture2D" uid="uid://crkrd57m3ghb7" path="res://Addons/Tiny Swords/UI/Icons/Pressed_01.png" id="6_qs4qu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_so1c6"]
 radius = 14.0357
@@ -262,6 +264,21 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0kqq"]
 bg_color = Color(1, 0, 0.0627451, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ln7e1"]
+size = Vector2(55, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3ejy"]
+size = Vector2(55, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysspl"]
+size = Vector2(55, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7m2c"]
+size = Vector2(55, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwtyd"]
+size = Vector2(40, 40)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_kygoh")
@@ -313,3 +330,45 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_p0kqq")
 value = 20.0
 rounded = true
 show_percentage = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TouchScreenLeft" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(52, 488)
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("5_prtts")
+shape = SubResource("RectangleShape2D_ln7e1")
+action = "move_left"
+visibility_mode = 1
+
+[node name="TouchScreenRight" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(248, 488)
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("5_prtts")
+shape = SubResource("RectangleShape2D_x3ejy")
+action = "move_right"
+visibility_mode = 1
+
+[node name="TouchScreenDown" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(154, 571)
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("5_prtts")
+shape = SubResource("RectangleShape2D_ysspl")
+action = "move_down"
+visibility_mode = 1
+
+[node name="TouchScreenUp" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(154, 406)
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("5_prtts")
+shape = SubResource("RectangleShape2D_r7m2c")
+action = "move_up"
+visibility_mode = 1
+
+[node name="TouchScreenAttack" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(972, 465)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("6_qs4qu")
+shape = SubResource("RectangleShape2D_cwtyd")
+action = "attack"
+visibility_mode = 1

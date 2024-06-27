@@ -28,6 +28,11 @@ var attack_cooldown: float =0.0
 var hitbox_cooldown: float= 0.0
 var input_vector: Vector2 = Vector2(0,0)
 var ritual_cooldown: float= 0.0
+var touch_left_pressed: bool = false
+var touch_right_pressed: bool = false
+var touch_up_pressed: bool = false
+var touch_down_pressed: bool = false
+
 
 signal  meat_collected(value:int)
 
@@ -44,7 +49,7 @@ func _process(delta:float) -> void:
 	
 	#Processar ataque
 	uptade_attack_cooldown(delta)
-	if Input.is_action_just_pressed("attack"): #A gente acabou de atacar?
+	if Input.is_action_just_pressed("attack") and not (touch_left_pressed or touch_right_pressed or touch_up_pressed or touch_down_pressed): #A gente acabou de atacar?
 		attack()
 		
 	#processar animação e rotação de sprite
@@ -88,7 +93,13 @@ func ready_input() -> void:
 		input_vector.x = 0.0
 	if abs(input_vector.y)<0.15:
 		input_vector.y = 0.0
-		
+	
+	 # Atualizar o estado dos botões de movimento
+	touch_left_pressed = Input.is_action_pressed("move_left")
+	touch_right_pressed = Input.is_action_pressed("move_right")
+	touch_up_pressed = Input.is_action_pressed("move_up")
+	touch_down_pressed = Input.is_action_pressed("move_down")
+	
 	#atualizar o is running
 	was_running = is_running
 	is_running= not input_vector.is_zero_approx() #checar se o valor é zero (se nao é 0 ta correndo)
