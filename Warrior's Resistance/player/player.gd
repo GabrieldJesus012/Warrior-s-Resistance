@@ -233,6 +233,7 @@ func _on_joystick_joystick_input(strength, direction, delta):
 	
 	was_running = is_running
 	is_running = not input_vector.is_zero_approx()
+	
 	#animacao para correr
 	play_run_idle_animation_joystick()
 	#girar sprite

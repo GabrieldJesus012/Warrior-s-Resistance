@@ -323,6 +323,7 @@ show_percentage = false
 
 [node name="Joystick" parent="CanvasLayer" instance=ExtResource("5_plws1")]
 position = Vector2(147, 465)
+visibility_mode = 1
 
 [node name="TouchScreenAttack" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.611765)
