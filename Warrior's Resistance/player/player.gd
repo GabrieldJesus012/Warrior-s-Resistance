@@ -25,7 +25,10 @@ extends CharacterBody2D
 #Variaveis
 var is_running: bool = false
 var was_running: bool = false
+var is_running2: bool = false
+var was_running2: bool = false
 var is_attacking: bool = false
+var is_attacking2: bool = false
 var attack_cooldown: float =0.0
 var hitbox_cooldown: float= 0.0
 var input_vector: Vector2 = Vector2(0,0)
@@ -254,18 +257,19 @@ func _on_joystick_joystick_input(strength, direction, delta):
 	input_vector.x = newDir.x
 	input_vector.y = newDir.y
 	
-	was_running = is_running
-	is_running = not input_vector.is_zero_approx()
+	var was_running2 = is_running2
+	is_running2 = not input_vector.is_zero_approx()
 	
 	#animacao para correr
 	play_run_idle_animation_joystick()
+	
 	#girar sprite
 	rotate_sprite()
 
 func play_run_idle_animation_joystick() -> void:
 	if not is_attacking:
-		if was_running != is_running:
-			if is_running:
+		if was_running2 != is_running2:
+			if is_running2:
 				animation_player.play("run")
 			else:
 				animation_player.play("Idle")
