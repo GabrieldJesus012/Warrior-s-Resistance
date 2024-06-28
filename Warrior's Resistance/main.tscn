@@ -1,9 +1,10 @@
-[gd_scene load_steps=37 format=3 uid="uid://5pu0re6nicg3"]
+[gd_scene load_steps=38 format=3 uid="uid://5pu0re6nicg3"]
 
 [ext_resource type="PackedScene" uid="uid://bqup6jvlp5e13" path="res://player/player.tscn" id="1_1gl0w"]
 [ext_resource type="Script" path="res://main.gd" id="1_3ktyt"]
 [ext_resource type="PackedScene" uid="uid://de025vk8s5nb" path="res://Systems/mob_spawner.tscn" id="2_jfbo7"]
 [ext_resource type="PackedScene" uid="uid://clh4q7w6vrs8e" path="res://ui/game_ui.tscn" id="3_efj3g"]
+[ext_resource type="PackedScene" uid="uid://dcpfxxfdjuu76" path="res://misc/push.tscn" id="3_i5plh"]
 [ext_resource type="Texture2D" uid="uid://c6k4gj0usmuai" path="res://Addons/Tiny Swords/Terrain/Water/Rocks/Rocks_02.png" id="3_r0s5v"]
 [ext_resource type="Texture2D" uid="uid://c682np4wwptfn" path="res://Addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="4_0mh14"]
 [ext_resource type="Texture2D" uid="uid://cbbrn6bt7xcls" path="res://Addons/Tiny Swords/Deco/01.png" id="5_1ed1x"]
@@ -216,6 +217,7 @@ y_sort_enabled = true
 script = ExtResource("1_3ktyt")
 game_ui = NodePath("GameUi")
 game_over_ui = ExtResource("15_0pt5l")
+pushing_scene = ExtResource("3_i5plh")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

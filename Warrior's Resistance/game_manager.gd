@@ -10,6 +10,7 @@ var time_elapsed: float= 0.0
 var time_elapsed_string: String
 var meat_count: int = 0
 var monsters_count: int = 0
+var p_on: bool = false #se o push está ligado
 
 
 func _process(delta:float):
