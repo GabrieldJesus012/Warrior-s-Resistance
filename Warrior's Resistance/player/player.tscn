@@ -334,6 +334,5 @@ visibility_mode = 1
 
 [node name="Joystick" parent="CanvasLayer" instance=ExtResource("5_plws1")]
 position = Vector2(147, 465)
-visibility_mode = 1
 
 [connection signal="joystick_input" from="CanvasLayer/Joystick" to="." method="_on_joystick_joystick_input"]
