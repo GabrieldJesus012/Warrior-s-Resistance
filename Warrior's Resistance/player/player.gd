@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var hitbox_area: Area2D =$HitboxArea
 @onready var health_progress_bar: ProgressBar = $HeathProgressBar
 
+
 @export_category("Movement")
 @export var speed: float = 3
 @export_category("Sword")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://clh4q7w6vrs8e"]
+[gd_scene load_steps=21 format=3 uid="uid://clh4q7w6vrs8e"]
 
 [ext_resource type="Script" path="res://ui/game_ui.gd" id="1_ddqid"]
 [ext_resource type="Texture2D" uid="uid://bidynuky0v564" path="res://Addons/Tiny Swords/UI/Banners/Banner_Connection_Right.png" id="2_kbvuv"]
 [ext_resource type="Texture2D" uid="uid://dwnqdabrm5acp" path="res://Addons/Tiny Swords/UI/Ribbons/Ribbon_Blue_Connection_Right_Pressed.png" id="3_i82so"]
 [ext_resource type="Texture2D" uid="uid://dqnmv3ppl54he" path="res://Addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_vgv5c"]
 [ext_resource type="Texture2D" uid="uid://dsxtf83etbqgu" path="res://Addons/Tiny Swords/UI/Buttons/Button_Disable_3Slides.png" id="4_64efj"]
+[ext_resource type="Texture2D" uid="uid://edlt8mlv15uh" path="res://Addons/kenney_particle-pack/PNG (Transparent)/mao.png" id="6_ha0j2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4c6qn"]
 texture = ExtResource("2_kbvuv")
@@ -66,6 +67,18 @@ axis_stretch_vertical = 2
 font_names = PackedStringArray("ITC Avant Garde")
 font_weight = 999
 subpixel_positioning = 0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rchxk"]
+texture = ExtResource("6_ha0j2")
+modulate_color = Color(0.52549, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_67iyw"]
+font_weight = 900
+
+[sub_resource type="LabelSettings" id="LabelSettings_kda77"]
+font = SubResource("SystemFont_67iyw")
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0.601797, 0.580468, 0, 1)
 
 [node name="GameUi" type="CanvasLayer"]
 script = ExtResource("1_ddqid")
@@ -180,3 +193,26 @@ theme_override_font_sizes/font_size = 32
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="panel_push" type="Panel" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = -73.0
+offset_right = -31.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rchxk")
+
+[node name="Label" type="Label" parent="panel_push"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = -24.0
+offset_right = 49.0
+offset_bottom = -1.0
+text = "Q"
+label_settings = SubResource("LabelSettings_kda77")
