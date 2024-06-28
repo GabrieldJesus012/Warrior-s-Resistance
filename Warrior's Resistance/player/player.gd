@@ -29,6 +29,7 @@ var attack_cooldown: float =0.0
 var hitbox_cooldown: float= 0.0
 var input_vector: Vector2 = Vector2(0,0)
 var ritual_cooldown: float= 0.0
+var push_cooldown_timer: Timer
 var newDir: Vector2 = Vector2.ZERO
 
 signal  meat_collected(value:int)
@@ -38,6 +39,11 @@ signal  meat_collected(value:int)
 func _ready():
 	GameManager.player = self
 	meat_collected.connect(func(value:int):GameManager.meat_count +=1)
+	#push tempo
+	push_cooldown_timer = Timer.new()
+	push_cooldown_timer.wait_time = 25.0  # Tempo de cooldown em segundos
+	push_cooldown_timer.one_shot = true
+	add_child(push_cooldown_timer)
 
 func _process(delta:float) -> void:
 	GameManager.player_position = position
@@ -229,9 +235,12 @@ func update_ritual(delta:float):
 
 func _input(event: InputEvent) -> void:
 		if Input.is_action_pressed("play_push"):
-			if GameManager.p_on == false:
-				pushing()
-				GameManager.p_on = true
+				if GameManager.p_on == false and push_cooldown_timer.is_stopped():
+					pushing()
+					GameManager.p_on = true
+					push_cooldown_timer.start()
+					await push_cooldown_timer.timeout
+					GameManager.p_on = false  # Reseta o estado do push
 
 func pushing():
 	var object_template2 = pushing_scene
