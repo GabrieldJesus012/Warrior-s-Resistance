@@ -11,10 +11,11 @@ extends CharacterBody2D
 @export var speed: float = 3
 @export_category("Sword")
 @export var sword_damage: int = 2
-@export_category("Ritual")
+@export_category("Poderes")
 @export var ritual_damage: int = 1
 @export var ritual_interval: float = 30
 @export var ritual_scene: PackedScene
+@export var pushing_scene: PackedScene
 @export_category("Life")
 @export var health: int= 50
 @export var max_health: int = 100
@@ -225,6 +226,17 @@ func update_ritual(delta:float):
 	var ritual = ritual_scene.instantiate()
 	ritual.damage_amount = ritual_damage
 	add_child(ritual)
+
+func _input(event: InputEvent) -> void:
+		if Input.is_action_pressed("play_push"):
+			if GameManager.p_on == false:
+				pushing()
+				GameManager.p_on = true
+
+func pushing():
+	var object_template2 = pushing_scene
+	var object2: Node2D = object_template2.instantiate()
+	add_child(object2)
 
 func _on_joystick_joystick_input(strength, direction, delta):
 	newDir = direction

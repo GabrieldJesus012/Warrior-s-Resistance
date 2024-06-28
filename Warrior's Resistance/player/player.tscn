@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqup6jvlp5e13"]
+[gd_scene load_steps=24 format=3 uid="uid://bqup6jvlp5e13"]
 
 [ext_resource type="Texture2D" uid="uid://c3wtwnsrxvhdd" path="res://Addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_k5qev"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_kygoh"]
 [ext_resource type="PackedScene" uid="uid://bnlgoy2eut280" path="res://misc/big_skull.tscn" id="2_bnnoh"]
 [ext_resource type="PackedScene" uid="uid://dduib2707y476" path="res://misc/ritual.tscn" id="2_jdwup"]
+[ext_resource type="PackedScene" uid="uid://dcpfxxfdjuu76" path="res://misc/push.tscn" id="3_sv7k7"]
 [ext_resource type="PackedScene" uid="uid://dyissvogocr44" path="res://Addons/joystick/joystick.tscn" id="5_plws1"]
 [ext_resource type="Texture2D" uid="uid://crkrd57m3ghb7" path="res://Addons/Tiny Swords/UI/Icons/Pressed_01.png" id="6_qs4qu"]
 
@@ -273,6 +274,7 @@ script = ExtResource("1_kygoh")
 ritual_damage = 2
 ritual_interval = 15.0
 ritual_scene = ExtResource("2_jdwup")
+pushing_scene = ExtResource("3_sv7k7")
 health = 100
 death_prefab = ExtResource("2_bnnoh")
 
