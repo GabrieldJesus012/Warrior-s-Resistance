@@ -321,10 +321,6 @@ show_percentage = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Joystick" parent="CanvasLayer" instance=ExtResource("5_plws1")]
-position = Vector2(147, 465)
-visibility_mode = 1
-
 [node name="TouchScreenAttack" type="TouchScreenButton" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0.611765)
 position = Vector2(972, 465)
@@ -332,6 +328,10 @@ scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("6_qs4qu")
 shape = SubResource("RectangleShape2D_cwtyd")
 action = "attack"
+visibility_mode = 1
+
+[node name="Joystick" parent="CanvasLayer" instance=ExtResource("5_plws1")]
+position = Vector2(147, 465)
 visibility_mode = 1
 
 [connection signal="joystick_input" from="CanvasLayer/Joystick" to="." method="_on_joystick_joystick_input"]

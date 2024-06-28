@@ -17,9 +17,11 @@ axis_stretch_vertical = 2
 region_rect = Rect2(48, 48, 144, 128)
 
 [sub_resource type="SystemFont" id="SystemFont_scn1l"]
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_rclyv"]
 font_weight = 999
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_bger8"]
 font = SubResource("SystemFont_rclyv")

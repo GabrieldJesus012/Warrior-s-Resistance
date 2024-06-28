@@ -83,4 +83,6 @@ func get_random_drop_item() -> PackedScene:
 		needle += drop_chance
 	return drop_items[0]
 
-
+func push(vec: Vector2):
+	var test = position - vec
+	position = test
