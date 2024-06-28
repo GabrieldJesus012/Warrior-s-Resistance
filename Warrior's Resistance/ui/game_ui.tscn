@@ -70,10 +70,10 @@ subpixel_positioning = 0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rchxk"]
 texture = ExtResource("6_ha0j2")
-modulate_color = Color(0.52549, 0, 0, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_67iyw"]
 font_weight = 900
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_kda77"]
 font = SubResource("SystemFont_67iyw")
