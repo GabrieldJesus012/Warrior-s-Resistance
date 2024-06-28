@@ -1,6 +1,7 @@
 extends Node
 
 signal game_over
+signal play_push_animation
 
 var player: Player
 var player_position: Vector2

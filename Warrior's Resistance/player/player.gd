@@ -240,6 +240,7 @@ func _input(event: InputEvent) -> void:
 					pushing()
 					GameManager.p_on = true
 					push_cooldown_timer.start()
+					GameManager.emit_signal("play_push_animation")
 					await push_cooldown_timer.timeout
 					GameManager.p_on = false  # Reseta o estado do push
 
